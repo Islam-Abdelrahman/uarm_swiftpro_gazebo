@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<robot name="swiftpro" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<xacro:include filename="$(find swiftpro_description)/urdf/swiftpro.gazebo" />
+<xacro:include filename="$(find swiftpro_description)/urdf/swiftpro_joints.xml" />
+<xacro:include filename="$(find swiftpro_description)/urdf/swiftpro_trans.xml" />
+
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+  
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="Base" />
+  </joint>
+
+<link name="Base">
+	<inertial>
+		<origin xyz="0.010476 0.000747 0.035226" rpy="0 0 0"/>
+		<mass value="1.886"/>
+		<inertia ixx="0.001196219" ixy="-0.000029358" ixz="0.000014859" 
+				 iyy="0.001147997" iyz="0.000016274"  izz="0.001425617"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Base.STL"/>
+		</geometry>
+		<origin xyz = "0 0 0 " rpy = "0 0 0"/>
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Base.STL"/>
+		</geometry>
+		<origin xyz = "0 0 0 " rpy = "0 0 0"/>
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+
+<link name="Link1">
+	<inertial>
+		<origin xyz="-0.002175 0 0.029097" rpy="0 0 0"/>
+		<mass value="0.2141"/>
+		<inertia ixx="0.000496945" ixy="-0.000000082" ixz="-0.000002744" 
+				 iyy="0.000150389" iyz="-0.000000002" izz="0.000522487"/>
+	</inertial>
+	<visual>
+		<geometry>
+	<mesh filename="package://swiftpro_description/meshes/Link1.STL"/>
+		</geometry>
+		<origin xyz = "0 0 -0.0723" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link1.STL"/>
+		</geometry>
+		<origin xyz = "0 0 -0.0723" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+
+<link name="Link2">
+	<inertial>
+		<origin xyz="-0.001071 0.001101 0.053193" rpy="0 0 0"/>
+		<mass value="0.026"/>
+		<inertia ixx="0.000061744" ixy="-0.000000025" ixz="-0.000000763" 
+				 iyy="0.000062096" iyz="-0.000001053" izz="0.000002942"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link2.STL"/>
+		</geometry>
+		<origin xyz = "-0.0132 0 -0.1056" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link2.STL"/>
+		</geometry>
+			<origin xyz = "-0.0132 0 -0.1056" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<link name="Link3">
+	<inertial>
+		<origin xyz="0.101948 -0.00022 0.011917" rpy="0 0 0"/>
+		<mass value="0.023"/>
+		<inertia ixx="0.000001982" ixy="0.000000483" ixz="-0.000005373" 
+				 iyy="0.000081264" iyz="0.000000008" izz="0.000080538"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link3.STL"/>
+		</geometry>
+			<origin xyz="-0.0132 0 -0.24767"/>
+		<material name="">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+	</visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link3.STL"/>
+		</geometry>
+			<origin xyz="-0.0132 0 -0.24767"/>
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<link name="Link4">
+	<inertial>
+		<origin xyz="-0.00235 0.013618 0.015458" rpy="0 0 0"/>
+		<mass value="0.003"/>
+		<inertia ixx="0.000000316" ixy="0.000000001"  ixz="0.000000177" 
+				 iyy="0.000001679" iyz="-0.000000007" izz="0.000001378"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link4.STL"/>
+		</geometry>
+			<origin xyz = "-0.0132 0 -0.24767" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link4.STL"/>
+		</geometry>
+			<origin xyz = "-0.0132 0 -0.24767" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<link name="Link5">
+	<inertial>
+		<origin xyz="0.000287 0.0157 0.072444" rpy="0 0 0"/>
+		<mass value="0.003"/>
+		<inertia ixx="0.000004841" ixy="0.000000000" ixz="0.000000023" 
+				 iyy="0.000004863" iyz="0.000000000" izz="0.000000023"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link5.STL"/>
+		</geometry>
+			<origin xyz = "0.0215 0 -0.1223" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link5.STL"/>
+		</geometry>
+			<origin xyz = "0.0215 0 -0.1223" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<link name="Link6">
+	<inertial>
+		<origin xyz="-0.014 -0.01391 -0.001062" rpy="0 0 0"/>
+		<mass value="0.003"/>
+		<inertia ixx="0.000000074" ixy="-0.000000060" ixz="0.000000055" 
+				 iyy="0.000000951" iyz="-0.000000004" izz="0.000000923"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link6.STL"/>
+		</geometry>
+			<origin xyz = "-0.0132 0 -0.1056" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link6.STL"/>
+		</geometry>
+			<origin xyz = "-0.0132 0 -0.1056" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<link name="Link7">
+	<inertial>
+		<origin xyz="-0.001242 -0.013867 0.083246" rpy="0 0 0"/>
+		<mass value="0.003"/>
+		<inertia ixx="0.000007052" ixy="0.000000003" ixz="0.000000055" 
+				 iyy="0.000007058" iyz="0.000000117" izz="0.000000039"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link7.STL"/>
+		</geometry>
+			<origin xyz = "0.0323 0 -0.10258" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link7.STL"/>
+		</geometry>
+			<origin xyz = "0.0323 0 -0.10258" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<link name="Link8">
+	<inertial>
+		<origin xyz="0.027288 0.001085 -0.007344" rpy="0 0 0"/>
+		<mass value="0.012"/>
+		<inertia ixx="0.000002184" ixy="0.000000020" ixz="-0.000000207" 
+				 iyy="0.000002992" iyz="0.000000371" izz="0.000001832"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Suction.STL"/>
+		</geometry>
+			<origin xyz = "-0.17201 0 -0.24651" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<!-- to have a stabile behavior during picking objects, we had to commment this part -->
+	<!-- <collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Suction.STL"/>
+		</geometry>
+			<origin xyz = "-0.17201 0 -0.24651" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision> -->
+</link>
+
+<link name="Link9">
+	<inertial>
+		<origin xyz="-0.079305 0.0157 -0.000043" rpy="0 0 0"/>
+		<mass value="0.003"/>
+		<inertia ixx="0.000000022" ixy="0.000000000" ixz="-0.000000002" 
+				 iyy="0.000006517" iyz="0.000000000" izz="0.000006497"/>
+	</inertial>
+	<visual>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link9.STL"/>
+		</geometry>
+			<origin xyz = "-0.19941 0 -0.27471" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </visual>
+	<collision>
+		<geometry>
+			<mesh filename="package://swiftpro_description/meshes/Link9.STL"/>
+		</geometry>
+			<origin xyz = "-0.19941 0 -0.27471" rpy = "0 0 0" />
+		<material name = "">
+			<color rgba = "0.3 0.3 0.3 1" />
+		</material>
+    </collision>
+</link>
+
+<!-- virtual links needed for vacuum_gripper plugin -->
+<link name="virtual_end_effector">
+    <gravity>0</gravity>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+		<cylinder radius="0.008" length="0.01"/>
+      </geometry>
+    <material name="transparent">
+        <color rgba="0 0 0 0"/>
+    </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.000000 0.000000 0.000000"/>
+      <mass value="0.001"/>
+      <inertia ixx="0.00000003333" ixy="0" ixz="0" 
+	  		   iyy="0.00000003333" iyz="0" 
+			   izz="0.00000005"/>
+    </inertial>
+  </link>
+</robot>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot>
+<joint name="Joint1" type="revolute">
+	<axis xyz="0 0 1"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Base"/>
+    <child link="Link1"/>
+	<origin xyz= "0 0 0.0723" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint2" type="revolute">
+	<axis xyz="0 1 0"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Link1"/>
+    <child link="Link2"/>
+	<origin xyz= "0.0132 0 0.0333" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint3" type="revolute">
+	<axis xyz="0 1 0"/>
+	<parent link="Link2" />
+	<child link="Link3" />
+	<limit effort = "10" lower="-1.45" upper="1.45" velocity = "0.0"/>
+	<origin xyz="0 0 0.14207 " rpy="0 0 0"/>
+</joint>
+
+<joint name="Joint4" type="revolute">
+	<axis xyz="0 1 0"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Link2"/>
+    <child link="Link4"/>
+	<origin xyz= "0 0 0.14207" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint5" type="revolute">
+	<axis xyz="0 1 0"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Link1"/>
+    <child link="Link5"/>
+	<origin xyz= "-0.0215 0 0.05001" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint6" type="revolute">
+	<axis xyz="0 1 0"/>
+	<!-- <limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" /> -->
+	<limit effort = "10" lower="-0.40" upper="2" velocity = "0.0"/>
+    <parent link="Link1"/>
+    <child link="Link6"/>
+	<origin xyz= "0.0132 0 0.0333" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint7" type="revolute">
+	<axis xyz="0 1 0"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Link6"/>
+    <child link="Link7"/>
+	<origin xyz= "-0.0455 0 -0.00301" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint8" type="revolute">
+	<axis xyz="0 1 0"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Link3"/>
+    <child link="Link8"/>
+	<origin xyz= "0.15852 0 0" rpy = " 0 0 0" />
+</joint>
+
+<joint name="Joint9" type="revolute">
+	<axis xyz="0 1 0"/>
+	<limit effort = "10" lower = "-3" upper = "3" velocity = "0.0" />
+    <parent link="Link8"/>
+    <child link="Link9"/>
+	<origin xyz= "0.02741 0 0.02703" rpy = " 0 0 0" />
+</joint>
+
+<!-- virtual joints needed for vacuum_gripper plugin -->
+  <joint name="virtual_end_joint" type="revolute">
+  	<axis xyz="0 0 1"/>
+    <parent link="Link8" />
+    <child link="virtual_end_effector" />
+    <origin xyz= "0.0565 0 -0.07" rpy = " 0 0 0" />
+    <limit effort="1" lower="0" upper="0" velocity="0.0"/>
+  </joint>
+
+</robot>
