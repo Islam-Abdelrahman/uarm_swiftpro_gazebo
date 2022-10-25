@@ -18,3 +18,6 @@ roslaunch swiftpro_control swiftpro_control.launch
 ## Pick and place
 	cd ~/catkin_ws/src/uarm_swiftpro_gazebo/scripts
 	source swifpro_pick_and_place.sh
+## Plan
+1. add rviz
+2. add real robot
